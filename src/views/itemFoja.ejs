@@ -1,0 +1,35 @@
+<% if(fojaSQL){ %>
+                
+    <div class="head">
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand text-black">Nueva Foja</a>
+              <form method="post" action="newFoja" class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="id_obra" aria-label="Search" name="id_obra">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+              </form>
+            </div>
+          </nav>      
+    </div>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table text-white" style="text-shadow: 0 0 5px #000;">
+            <thead>
+                <% Object.keys(fojaSQL[0]).forEach(element => { %> 
+                    <th scope="col"> <%- element; %></th>
+                <% });%>
+            </thead>
+            <tbody>
+                <% var column = Object.keys(fojaSQL[0]);%>
+
+                <% fojaSQL.forEach(function(fojaSQL){ %>
+                <tr>
+                    <% column.forEach(element => { %> 
+                        <td> <%- fojaSQL[element] %></td>
+                    <% });%>    
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    
+<% }%>

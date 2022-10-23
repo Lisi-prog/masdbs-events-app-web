@@ -1,0 +1,20 @@
+<div class="container">
+        <table class="table">
+            <thead>
+                <% Object.keys(resultSQL[0]).forEach(element => { %> 
+                    <th scope="col"> <%- element; %></th>
+                <% });%>
+            </thead>
+            <tbody>
+                <% var column = Object.keys(resultSQL[0]);%>
+
+                <% resultSQL.forEach(function(resultSQL){ %>
+                <tr>
+                    <% column.forEach(element => { %> 
+                        <td> <%- resultSQL[element] %></td>
+                    <% });%>    
+                </tr>
+                <% }); %>
+            </tbody>
+        </table> 
+</div>

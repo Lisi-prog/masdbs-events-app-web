@@ -1,0 +1,22 @@
+<% if(resultSQL){ %>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar text-white text-center">
+        <table class="table mb-0 text-white" style="text-shadow: 0 0 5px #000;">
+            <thead>
+                <% Object.keys(resultSQL[0]).forEach(element => { %> 
+                    <th scope="col"> <%- element; %></th>
+                <% });%>
+            </thead>
+            <tbody>
+                <% var column = Object.keys(resultSQL[0]);%>
+
+                <% resultSQL.forEach(function(resultSQL){ %>
+                <tr>
+                    <% column.forEach(element => { %> 
+                        <td> <%- resultSQL[element] %></td>
+                    <% });%>    
+                </tr>
+                <% }); %>
+            </tbody>
+        </table> 
+</div>
+<% } %>

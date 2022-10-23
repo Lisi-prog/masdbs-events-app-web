@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head.html") %>
+</head>
+<body>
+    <%- include("partials/navigation.html") %>
+    <div class="container">
+        <div class="contenedor-consulta bg-dark">
+            <div class="botonera">
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container-fluid">
+                      <a class="navbar-brand">Interfaz:</a>
+                      <div class="d-grid gap-2 d-md-block">
+                        <button type="button" class="btn btn-secondary" onclick="nuevaFoja();">Nueva Foja</button>
+                        <button type="button" class="btn btn-secondary" onclick="pruebaUno();">Cargar Foja</button>
+                        <button type="button" class="btn btn-secondary">Light</button>
+                        <button type="button" class="btn btn-secondary">Light</button>
+                        <button type="button" class="btn btn-secondary">Light</button>
+                      </div>
+                      <form method="post" action="sql" class="d-flex">
+                        <input class="form-control me-2" type="text" placeholder="SQL" aria-label="Search" name="sentenciaSQL">
+                        <button class="btn btn-outline-warning" type="submit"><i class="fas fa-bolt"></i></button>
+                      </form>
+                    </div>
+                  </nav>
+            </div>
+            <div class="ventana-principal" id="ven-prin">
+
+                <% if(fojaSQL){ %>
+                
+                    <div class="head">
+                        <nav class="navbar bg-light">
+                            <div class="container-fluid">
+                              <a class="navbar-brand text-black">Nueva Foja</a>
+                              <form method="post" action="newFoja" class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="id_obra" aria-label="Search" name="id_obra">
+                                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                              </form>
+                            </div>
+                          </nav>      
+                    </div>
+                    <div class="container-tabla">
+                        <table class="table text-white" style="text-shadow: 0 0 5px #000;">
+                            <thead>
+                                <% Object.keys(fojaSQL[0]).forEach(element => { %> 
+                                    <th scope="col"> <%- element; %></th>
+                                <% });%>
+                            </thead>
+                            <tbody>
+                                <% var column = Object.keys(fojaSQL[0]);%>
+                
+                                <% fojaSQL.forEach(function(fojaSQL){ %>
+                                <tr>
+                                    <% column.forEach(element => { %> 
+                                        <td> <%- fojaSQL[element] %></td>
+                                    <% });%>    
+                                </tr>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                <% }%>
+
+                <% if(resultSQL){ %>
+                <div class="container-tabla">
+                    <table class="table text-white" style="text-shadow: 0 0 5px #000;">
+                        <thead>
+                            <% Object.keys(resultSQL[0]).forEach(element => { %> 
+                                <th scope="col"> <%- element; %></th>
+                            <% });%>
+                        </thead>
+                        <tbody>
+                            <% var column = Object.keys(resultSQL[0]);%>
+            
+                            <% resultSQL.forEach(function(resultSQL){ %>
+                            <tr>
+                                <% column.forEach(element => { %> 
+                                    <td> <%- resultSQL[element] %></td>
+                                <% });%>    
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table> 
+            </div>
+            <% } %>
+                <!-- <div class="login rounded">
+                    <form class="">
+                        <div class="form-group mb-1 p-3">
+                            <label for="exampleFormControlInput1" class="form-label">Usuario</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                        </div>
+                        <div class="form-group mb-1 p-3">
+                            <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                        </div>
+                        <div class="form-group mb-1 p-3">
+                            <button type="button" class="btn btn-success">Iniciar sesion</button>
+                        </div>
+                    </form>
+                </div> -->
+                
+            </div>
+        </div>
+    </div>
+
+    <%- include("partials/script.html") %>
+    <%- include("partials/footer.html") %>
+</body>
+</html>

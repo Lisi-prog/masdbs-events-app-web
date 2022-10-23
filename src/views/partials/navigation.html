@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light bg-light px-3" id="nav-principal">
+  <a class="navbar-brand" href="/">
+      <i class="fas fa-laptop-code"></i>
+      Tecnologia de Base de datos
+  </a>
+  <div class="d-grid gap-2 d-md-block">
+    <label style="padding-right: 5px;">Fojas:</label>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/nuevaFoja'">Nueva Foja</button>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/cargarFoja'">Cargar Foja</button>
+
+    <label style="padding-left: 20px; padding-right: 5px;">Obras:</label>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/obras'">Ver</button>
+    <!-- <button type="button" class="btn btn-secondary" onclick="verObras();">Light</button> -->
+    <button type="button" class="btn btn-secondary" onclick="location.href='/avanceObra'">Avance</button>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/montoObra'">Monto</button>
+
+    <label style="padding-left: 20px; padding-right: 5px;">Certificados:</label>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/certiPago'">Pagos</button>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/certiObra'">Obras</button>
+  </div>
+  <form method="post" action="sql" class="d-flex">
+    <input class="form-control me-2" type="text" placeholder="SQL" aria-label="Search" name="sentenciaSQL">
+    <button class="btn btn-outline-warning" type="submit"><i class="fas fa-bolt"></i></button>
+  </form>
+</nav>

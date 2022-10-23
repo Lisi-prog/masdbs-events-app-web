@@ -1,0 +1,55 @@
+<div class="prueba">
+    <div class="row">
+        <div class="col text-center">
+            <h3>Certificado de obra Nº: <%-encabezado[0].nro_cert_obra%> </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Certificado de pago Nº: <%-encabezado[0].nro_cert%> 
+        </div>
+        <div class="col">
+            Fecha:
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Obra: <%-encabezado[0].nom_obra%> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Nro Obra: <%-encabezado[0].id_obra%> 
+        </div>
+    </div>
+
+    <table id="tablaVerCertiObra" class="table table-striped table-bordered text-center" style="width:100%">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Vivienda</th>
+                <th>Infra</th>
+                <th>Anterior</th>
+                <th>Mes</th>
+                <th>Acu</th>
+                <th>Total parcial</th>
+            </tr>
+        </thead>
+        <tbody id="res">
+            <%- console.log(filas)%>
+            <% if(filas){ %>
+                <% filas.forEach(function(filas){ %>
+                    <tr>
+                        <td> <%- filas.den_item %></td>
+                        <td> <%- filas.vivienda %></td>
+                        <td> <%- filas.Infraestructura%></td>
+                        <td> <%- filas.ava_acu_ant %></td>
+                        <td> <%- filas.ava_actual %></td>
+                        <td> <%- filas.acumulado %></td>
+                        <td> <%- filas.Total_parcial %></td>
+                    </tr>
+                <% }); %>
+            <% }; %>
+        </tbody>
+    </table>
+</div>

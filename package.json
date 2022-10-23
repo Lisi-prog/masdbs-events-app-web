@@ -1,0 +1,39 @@
+{
+  "name": "tec-db-tp-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "src/index.js",
+    "dev": "nodemon src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lisi-prog/tec-db-tp-final.git"
+  },
+  "author": "Lisi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lisi-prog/tec-db-tp-final/issues"
+  },
+  "homepage": "https://github.com/Lisi-prog/tec-db-tp-final#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-myconnection": "^1.0.4",
+    "express-mysql-session": "^2.1.8",
+    "express-session": "^1.17.2",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "timeago.js": "^4.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

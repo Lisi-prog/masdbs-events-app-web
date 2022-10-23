@@ -1,0 +1,23 @@
+<div class="head">
+    <nav class="navbar bg-light" id="botonera-principal">
+        <div class="container-fluid">
+            <a class="navbar-brand text-black">Certificado de obra</a>
+            <div class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="id_obra" aria-label="Search" id="idobratxt">
+                <input class="form-control me-2" type="search" placeholder="id_certi_pago" aria-label="Search" id="idcertipagotxt">
+                <button id="btn-idobra" class="btn btn-outline-success" onclick="mostrarCertiObra();">Buscar</button>
+            </div>
+        </div>
+    </nav>
+</div>
+<table id="tablaArticulos" class="table table-striped table-bordered text-center" style="width:100%">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>Foja</th>
+            <th>Abrir</th>
+        </tr>
+    </thead>
+    <tbody id="res">
+    </tbody>
+</table>
