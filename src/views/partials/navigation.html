@@ -1,22 +1,28 @@
 <nav class="navbar navbar-light bg-light px-3" id="nav-principal">
   <a class="navbar-brand" href="/">
-      <i class="fas fa-laptop-code"></i>
-      Tecnologia de Base de datos
+    <div class="row">
+      <div class="col">
+        <i class="fas fa-play"></i>
+      </div>
+      <div class="col">
+        <h4>+Dbs Eventos</h4>
+      </div>
+    </div>
   </a>
   <div class="d-grid gap-2 d-md-block">
-    <label style="padding-right: 5px;">Fojas:</label>
-    <button type="button" class="btn btn-secondary" onclick="location.href='/nuevaFoja'">Nueva Foja</button>
-    <button type="button" class="btn btn-secondary" onclick="location.href='/cargarFoja'">Cargar Foja</button>
+    <label style="padding-right: 5px;">Eventos:</label>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/nuevaFoja'">Ver</button>
+    <!-- <button type="button" class="btn btn-secondary" onclick="location.href='/cargarFoja'">Historial</button> -->
 
-    <label style="padding-left: 20px; padding-right: 5px;">Obras:</label>
+    <label style="padding-left: 20px; padding-right: 5px;">Participantes:</label>
     <button type="button" class="btn btn-secondary" onclick="location.href='/obras'">Ver</button>
     <!-- <button type="button" class="btn btn-secondary" onclick="verObras();">Light</button> -->
-    <button type="button" class="btn btn-secondary" onclick="location.href='/avanceObra'">Avance</button>
-    <button type="button" class="btn btn-secondary" onclick="location.href='/montoObra'">Monto</button>
+    <!-- <button type="button" class="btn btn-secondary" onclick="location.href='/avanceObra'">Avance</button>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/montoObra'">Monto</button> -->
 
-    <label style="padding-left: 20px; padding-right: 5px;">Certificados:</label>
-    <button type="button" class="btn btn-secondary" onclick="location.href='/certiPago'">Pagos</button>
-    <button type="button" class="btn btn-secondary" onclick="location.href='/certiObra'">Obras</button>
+    <label style="padding-left: 20px; padding-right: 5px;">Ranking:</label>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/certiPago'">Ver</button>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/certiObra'">Excel</button>
   </div>
   <form method="post" action="sql" class="d-flex">
     <input class="form-control me-2" type="text" placeholder="SQL" aria-label="Search" name="sentenciaSQL">
